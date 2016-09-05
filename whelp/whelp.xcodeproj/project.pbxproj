@@ -15,6 +15,8 @@
 		4FF3B1551D7E157B006FE8EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3B1541D7E157B006FE8EF /* Assets.xcassets */; };
 		4FF3B1581D7E157B006FE8EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3B1561D7E157B006FE8EF /* LaunchScreen.storyboard */; };
 		4FF3B1611D7E15CC006FE8EF /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3B1601D7E15CC006FE8EF /* DataStore.m */; };
+		4FF3B1641D7E19E8006FE8EF /* QuotesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */; };
+		F7DEBFE2CC601E339F4DE99C /* libPods-whelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F4E119DA0EF8B74B6D528 /* libPods-whelp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,11 @@
 		4FF3B1591D7E157B006FE8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FF3B15F1D7E15CC006FE8EF /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		4FF3B1601D7E15CC006FE8EF /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
+		4FF3B1621D7E19E8006FE8EF /* QuotesAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotesAPI.h; sourceTree = "<group>"; };
+		4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesAPI.m; sourceTree = "<group>"; };
+		CC02229E39CFDA00BB0EDFA3 /* Pods-whelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-whelp/Pods-whelp.release.xcconfig"; sourceTree = "<group>"; };
+		F9A5A1FFF39EF67DB8739C5C /* Pods-whelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-whelp/Pods-whelp.debug.xcconfig"; sourceTree = "<group>"; };
+		FE5F4E119DA0EF8B74B6D528 /* libPods-whelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-whelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DEBFE2CC601E339F4DE99C /* libPods-whelp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132BDD5BD213E453FEB7996E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9A5A1FFF39EF67DB8739C5C /* Pods-whelp.debug.xcconfig */,
+				CC02229E39CFDA00BB0EDFA3 /* Pods-whelp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4FF3B1391D7E157A006FE8EF = {
 			isa = PBXGroup;
 			children = (
 				4FF3B1441D7E157B006FE8EF /* whelp */,
 				4FF3B1431D7E157B006FE8EF /* Products */,
+				132BDD5BD213E453FEB7996E /* Pods */,
+				59F8FF302540762F49662D43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +88,8 @@
 				4FF3B14C1D7E157B006FE8EF /* ViewController.m */,
 				4FF3B15F1D7E15CC006FE8EF /* DataStore.h */,
 				4FF3B1601D7E15CC006FE8EF /* DataStore.m */,
+				4FF3B1621D7E19E8006FE8EF /* QuotesAPI.h */,
+				4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */,
 				4FF3B14E1D7E157B006FE8EF /* Main.storyboard */,
 				4FF3B1541D7E157B006FE8EF /* Assets.xcassets */,
 				4FF3B1561D7E157B006FE8EF /* LaunchScreen.storyboard */,
@@ -87,6 +108,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		59F8FF302540762F49662D43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F4E119DA0EF8B74B6D528 /* libPods-whelp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FF3B15C1D7E157B006FE8EF /* Build configuration list for PBXNativeTarget "whelp" */;
 			buildPhases = (
+				F02ADD350E220637780AD6BD /* [CP] Check Pods Manifest.lock */,
 				4FF3B13E1D7E157A006FE8EF /* Sources */,
 				4FF3B13F1D7E157A006FE8EF /* Frameworks */,
 				4FF3B1401D7E157A006FE8EF /* Resources */,
+				F562F6CFD62488DDC224B888 /* [CP] Embed Pods Frameworks */,
+				FE02D50120AE06843E6F23F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,12 +185,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F02ADD350E220637780AD6BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F562F6CFD62488DDC224B888 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-whelp/Pods-whelp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE02D50120AE06843E6F23F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-whelp/Pods-whelp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4FF3B13E1D7E157A006FE8EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4FF3B1611D7E15CC006FE8EF /* DataStore.m in Sources */,
+				4FF3B1641D7E19E8006FE8EF /* QuotesAPI.m in Sources */,
 				4FF3B14D1D7E157B006FE8EF /* ViewController.m in Sources */,
 				4FF3B14A1D7E157B006FE8EF /* AppDelegate.m in Sources */,
 				4FF3B1531D7E157B006FE8EF /* whelp.xcdatamodeld in Sources */,
@@ -274,6 +355,7 @@
 		};
 		4FF3B15D1D7E157B006FE8EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9A5A1FFF39EF67DB8739C5C /* Pods-whelp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = whelp/Info.plist;
@@ -285,6 +367,7 @@
 		};
 		4FF3B15E1D7E157B006FE8EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC02229E39CFDA00BB0EDFA3 /* Pods-whelp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = whelp/Info.plist;
@@ -313,6 +396,7 @@
 				4FF3B15E1D7E157B006FE8EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

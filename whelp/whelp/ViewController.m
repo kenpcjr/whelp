@@ -20,6 +20,8 @@
     
     self.dataStore = [DataStore sharedInstance];
     
+    [QuotesAPI getRandomQuote];
+    
 }
 
 - (void)didReceiveMemoryWarning {
