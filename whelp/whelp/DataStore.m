@@ -102,9 +102,11 @@
 -(void)getRandomQuoteWith:(void (^)())completion {
     
     [QuotesAPI getRandomQuoteWith:^(NSString *quote) {
-        self.quote = quote;
+        
+        Quote *receivedQuote = [[Quote alloc]initWithOriginalQuote:quote];
+        self.quote = receivedQuote;
         NSLog(@"Quote from handler:%@", quote);
-        NSLog(@"Quote from property:%@", self.quote);
+        NSLog(@"Quote from property:%@", self.quote.originalQuote);
         
         completion();
     }];

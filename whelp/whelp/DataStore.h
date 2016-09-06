@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "QuotesAPI.h"
+#import "Quote.h"
 
 @interface DataStore : NSObject
 
@@ -15,7 +16,7 @@
 @property (strong, nonatomic) NSArray *adjectives;
 @property (strong, nonatomic) NSArray *verbs;
 @property (strong, nonatomic) NSArray *pastParticiple;
-@property (strong, nonatomic) NSString *quote;
+@property (strong, nonatomic) Quote *quote;
 
 + (instancetype)sharedInstance;
 

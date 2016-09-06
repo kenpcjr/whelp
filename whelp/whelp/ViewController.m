@@ -21,7 +21,7 @@
     self.dataStore = [DataStore sharedInstance];
     
     [self.dataStore getRandomQuoteWith:^{
-        NSLog(@"From VC:%@", self.dataStore.quote);
+        NSLog(@"From VC:%@", self.dataStore.quote.originalQuote);
         
     }];
     

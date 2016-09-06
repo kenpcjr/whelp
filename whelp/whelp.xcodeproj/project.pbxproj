@@ -16,6 +16,7 @@
 		4FF3B1581D7E157B006FE8EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF3B1561D7E157B006FE8EF /* LaunchScreen.storyboard */; };
 		4FF3B1611D7E15CC006FE8EF /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3B1601D7E15CC006FE8EF /* DataStore.m */; };
 		4FF3B1641D7E19E8006FE8EF /* QuotesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */; };
+		4FF3B1671D7EEE0D006FE8EF /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3B1661D7EEE0D006FE8EF /* Quote.m */; };
 		F7DEBFE2CC601E339F4DE99C /* libPods-whelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F4E119DA0EF8B74B6D528 /* libPods-whelp.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		4FF3B1601D7E15CC006FE8EF /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		4FF3B1621D7E19E8006FE8EF /* QuotesAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotesAPI.h; sourceTree = "<group>"; };
 		4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesAPI.m; sourceTree = "<group>"; };
+		4FF3B1651D7EEE0D006FE8EF /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		4FF3B1661D7EEE0D006FE8EF /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		CC02229E39CFDA00BB0EDFA3 /* Pods-whelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-whelp/Pods-whelp.release.xcconfig"; sourceTree = "<group>"; };
 		F9A5A1FFF39EF67DB8739C5C /* Pods-whelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-whelp/Pods-whelp.debug.xcconfig"; sourceTree = "<group>"; };
 		FE5F4E119DA0EF8B74B6D528 /* libPods-whelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-whelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +93,8 @@
 				4FF3B1601D7E15CC006FE8EF /* DataStore.m */,
 				4FF3B1621D7E19E8006FE8EF /* QuotesAPI.h */,
 				4FF3B1631D7E19E8006FE8EF /* QuotesAPI.m */,
+				4FF3B1651D7EEE0D006FE8EF /* Quote.h */,
+				4FF3B1661D7EEE0D006FE8EF /* Quote.m */,
 				4FF3B14E1D7E157B006FE8EF /* Main.storyboard */,
 				4FF3B1541D7E157B006FE8EF /* Assets.xcassets */,
 				4FF3B1561D7E157B006FE8EF /* LaunchScreen.storyboard */,
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF3B1671D7EEE0D006FE8EF /* Quote.m in Sources */,
 				4FF3B1611D7E15CC006FE8EF /* DataStore.m in Sources */,
 				4FF3B1641D7E19E8006FE8EF /* QuotesAPI.m in Sources */,
 				4FF3B14D1D7E157B006FE8EF /* ViewController.m in Sources */,
