@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) DataStore *dataStore;
 
+-(void)insertWordInto:(NSString *)quote;
+
 
 @end
 

@@ -10,7 +10,7 @@
 
 @implementation QuotesAPI
 
-+(void)getRandomQuote {
++(void)getRandomQuoteWith:(void (^)(NSString* quote))completion {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -27,7 +27,11 @@
             
         } else {
             
-            NSLog(@"%@, %@", response, responseObject);
+            NSLog(@"%@", responseObject);
+            
+            NSString *quote = responseObject[@"quoteText"];
+            
+            completion(quote);
             
         }
         

@@ -11,6 +11,6 @@
 
 @interface QuotesAPI : NSObject
 
-+(void)getRandomQuote;
++(void)getRandomQuoteWith:(void (^)(NSString* quote))completion;
 
 @end

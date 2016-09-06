@@ -20,7 +20,12 @@
     
     self.dataStore = [DataStore sharedInstance];
     
-    [QuotesAPI getRandomQuote];
+    [self.dataStore getRandomQuoteWith:^{
+        NSLog(@"From VC:%@", self.dataStore.quote);
+        
+    }];
+    
+    
     
 }
 

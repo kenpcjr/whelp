@@ -7,9 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QuotesAPI.h"
 
 @interface DataStore : NSObject
 
+@property (strong, nonatomic) NSArray *nouns;
+@property (strong, nonatomic) NSArray *adjectives;
+@property (strong, nonatomic) NSArray *verbs;
+@property (strong, nonatomic) NSArray *pastParticiple;
+@property (strong, nonatomic) NSString *quote;
+
 + (instancetype)sharedInstance;
+
+-(void)loadLameWords;
+
+-(void)getRandomQuoteWith:(void (^)())completion;
 
 @end
