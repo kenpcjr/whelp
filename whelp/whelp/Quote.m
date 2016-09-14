@@ -7,6 +7,7 @@
 //
 
 #import "Quote.h"
+#import "DataStore.h"
 
 @implementation Quote
 
@@ -33,7 +34,7 @@
 
 -(void)whelpQuote:(Quote *)quote {
     
-//    DataStore *dataStore = [DataStore sharedInstance];
+    DataStore *dataStore = [DataStore sharedInstance];
     
     NSMutableArray *sentenceAsArray = [[quote.originalQuote componentsSeparatedByString:@" "]mutableCopy];
     
@@ -43,14 +44,15 @@
         
         if ([word hasSuffix:@"ing"]) {
             
-//            NSString *randomParticiple = [dataStore getRandomParticiple];
-//        
-//            [whelpedArray insertObject:randomParticiple atIndex:[sentenceAsArray indexOfObject:word]];
-        
+            NSString *randomParticiple = [dataStore getRandomParticiple];
+            NSLog(@"TRYS TO INSERT:%@", randomParticiple );
+            
+            [whelpedArray insertObject:randomParticiple atIndex:[sentenceAsArray indexOfObject:word]];
+            
         } else {
             
             [whelpedArray insertObject: word atIndex:[sentenceAsArray indexOfObject:word]];
-             
+            
         }
     }
     

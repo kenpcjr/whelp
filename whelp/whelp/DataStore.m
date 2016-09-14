@@ -7,6 +7,7 @@
 //
 
 #import "DataStore.h"
+#import "Quote.h"
 
 @implementation DataStore
 
@@ -18,6 +19,7 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[DataStore alloc] init];
     });
+    
     return sharedInstance;
 }
 
@@ -119,7 +121,9 @@
     
     NSInteger randomNumber = arc4random_uniform(self.pastParticiple.count - 1);
     
-    NSLog(@"%li", randomNumber);
+    NSLog(@"THIS NUMBER %li", randomNumber);
+    
+    NSLog(@"THE FUNCTION RETURNS: %@", self.pastParticiple[randomNumber] );
     
     return self.pastParticiple[randomNumber];
 

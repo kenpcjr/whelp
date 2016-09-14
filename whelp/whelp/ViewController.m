@@ -20,6 +20,8 @@
     
     self.dataStore = [DataStore sharedInstance];
     
+    [self.dataStore loadLameWords];
+    
     [self.dataStore getRandomQuoteWith:^{
         NSLog(@"From VC:%@", self.dataStore.quote.originalQuote);
         

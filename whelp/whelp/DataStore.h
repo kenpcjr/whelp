@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "QuotesAPI.h"
-#import "Quote.h"
+@class Quote;
 
 
 @interface DataStore : NSObject
