@@ -31,4 +31,34 @@
     
 }
 
+-(void)whelpQuote:(Quote *)quote {
+    
+//    DataStore *dataStore = [DataStore sharedInstance];
+    
+    NSMutableArray *sentenceAsArray = [[quote.originalQuote componentsSeparatedByString:@" "]mutableCopy];
+    
+    NSMutableArray *whelpedArray = [@[]mutableCopy];
+    
+    for (NSString *word in sentenceAsArray) {
+        
+        if ([word hasSuffix:@"ing"]) {
+            
+//            NSString *randomParticiple = [dataStore getRandomParticiple];
+//        
+//            [whelpedArray insertObject:randomParticiple atIndex:[sentenceAsArray indexOfObject:word]];
+        
+        } else {
+            
+            [whelpedArray insertObject: word atIndex:[sentenceAsArray indexOfObject:word]];
+             
+        }
+    }
+    
+    NSString *whelpedString = [whelpedArray componentsJoinedByString:@" "];
+    
+    quote.whelpedQuote = whelpedString;
+    
+    NSLog(@"%@", whelpedString);
+}
+
 @end

@@ -113,6 +113,16 @@
     
     NSLog(@"Property outside handler:%@", self.quote);
     
+}
+
+-(NSString *)getRandomParticiple {
+    
+    NSInteger randomNumber = arc4random_uniform(self.pastParticiple.count - 1);
+    
+    NSLog(@"%li", randomNumber);
+    
+    return self.pastParticiple[randomNumber];
+
     
 }
 

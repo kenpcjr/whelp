@@ -23,6 +23,10 @@
     [self.dataStore getRandomQuoteWith:^{
         NSLog(@"From VC:%@", self.dataStore.quote.originalQuote);
         
+        [self.dataStore.quote whelpQuote:self.dataStore.quote];
+        
+        NSLog(@"Whelped Quote: %@", self.dataStore.quote.whelpedQuote);
+        
     }];
     
     

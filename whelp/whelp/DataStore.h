@@ -10,6 +10,7 @@
 #import "QuotesAPI.h"
 #import "Quote.h"
 
+
 @interface DataStore : NSObject
 
 @property (strong, nonatomic) NSArray *nouns;
@@ -23,5 +24,7 @@
 -(void)loadLameWords;
 
 -(void)getRandomQuoteWith:(void (^)())completion;
+
+-(NSString*)getRandomParticiple;
 
 @end

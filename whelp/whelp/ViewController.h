@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataStore.h"
 #import "QuotesAPI.h"
+#import "Quote.h"
 
 @interface ViewController : UIViewController
 

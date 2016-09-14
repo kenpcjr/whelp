@@ -17,4 +17,6 @@
 -(instancetype)init;
 -(instancetype)initWithOriginalQuote:(NSString*)quote;
 
+-(void)whelpQuote:(Quote *)quote;
+
 @end
