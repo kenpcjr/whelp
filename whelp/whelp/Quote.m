@@ -42,7 +42,7 @@
     
     for (NSString *word in sentenceAsArray) {
         
-        if ([word hasSuffix:@"ing"]) {
+        if ([word hasSuffix:@"ing"] || [word hasSuffix:@"ing."]) {
             
             NSString *randomParticiple = [dataStore getRandomParticiple];
             NSLog(@"TRYS TO INSERT:%@", randomParticiple );
