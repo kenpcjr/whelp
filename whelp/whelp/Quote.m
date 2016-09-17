@@ -36,40 +36,76 @@
     
     DataStore *dataStore = [DataStore sharedInstance];
     
-    NSMutableArray *sentenceAsArray = [[quote.originalQuote componentsSeparatedByString:@" "]mutableCopy];
+    NSMutableArray *sentenceAsArray = [[quote.originalQuote componentsSeparatedByString:@" "] mutableCopy];
+    
+    [self removeTrailingSpaces:sentenceAsArray];
+    
+    NSMutableString *whelpedString = [self replacePartsOfSpeechFrom:sentenceAsArray
+                                                     UsingDataStore:dataStore];
+    
+    [self ensurePunctuation:whelpedString];
+    
+    quote.whelpedQuote = whelpedString;
+    
+    // NSLog(@"%@", whelpedString);
+}
+
+-(void)removeTrailingSpaces:(NSMutableArray *)array {
+    
+    while ([array.lastObject isEqualToString:@""]) {
+        
+        [array removeLastObject];
+        
+    }
+    
+    NSLog(@"%@", array);
+    
+}
+
+-(NSMutableString *)replacePartsOfSpeechFrom:(NSMutableArray *)originalarray UsingDataStore:(DataStore *)dataStore {
     
     NSMutableArray *whelpedArray = [@[]mutableCopy];
     
-    for (NSUInteger i = 0; i < sentenceAsArray.count; i++) {
+    for (NSUInteger i = 0; i < originalarray.count; i++) {
         
-        NSString *word = sentenceAsArray[i];
+        NSString *word = originalarray[i];
         
         if ([word hasSuffix:@"ing"] || [word hasSuffix:@"ing."]) {
             
             NSString *randomParticiple = [dataStore getRandomParticiple];
-            NSLog(@"TRYS TO INSERT:%@", randomParticiple );
+            //            NSLog(@"TRYS TO INSERT:%@", randomParticiple );
             
             [whelpedArray insertObject:randomParticiple atIndex:i];
             
-        } else if ((i > 0 && [sentenceAsArray[i - 1] isEqualToString:@"a"]) || (i > 0 && [sentenceAsArray[i - 1] isEqualToString:@"the"])){
+        } else if ((i > 0 && [originalarray[i - 1] isEqualToString:@"a"]) || (i > 0 && [originalarray[i - 1] isEqualToString:@"the"])){
             
             NSString *randomNoun = [dataStore getRandomNoun];
-        
+            
             [whelpedArray insertObject: randomNoun atIndex:i];
-        
-        
+            
+            
         } else {
             
             [whelpedArray insertObject: word atIndex:i];
             
         }
+        
     }
     
-    NSString *whelpedString = [whelpedArray componentsJoinedByString:@" "];
+    return [[whelpedArray componentsJoinedByString:@" "] mutableCopy];
+}
+
+
+-(void)ensurePunctuation:(NSMutableString *)string {
     
-    quote.whelpedQuote = whelpedString;
+    NSString *lastCharacter = [string substringFromIndex: string.length - 1];
     
-    NSLog(@"%@", whelpedString);
+    if (![@[@"!", @".", @"?",] containsObject:lastCharacter]) {
+        
+        [string appendString:@"."];
+        
+    }
+    
 }
 
 @end

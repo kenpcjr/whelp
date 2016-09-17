@@ -19,5 +19,9 @@
 -(instancetype)initWithOriginalQuote:(NSString*)quote;
 
 -(void)whelpQuote:(Quote *)quote;
+-(void)removeTrailingSpaces:(NSMutableArray *)array;
+-(NSMutableString *)replacePartsOfSpeechFrom:(NSMutableArray *)originalarray
+                              UsingDataStore:(DataStore *)dataStore;
+-(void)ensurePunctuation:(NSMutableString *)string;
 
 @end
