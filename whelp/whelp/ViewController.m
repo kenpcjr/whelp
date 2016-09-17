@@ -22,6 +22,8 @@
     
     [self.dataStore loadLameWords];
     
+    NSLog(@"Here's the Array of nouns from VC: %@",self.dataStore.nouns);
+    
     [self.dataStore getRandomQuoteWith:^{
         NSLog(@"From VC:%@", self.dataStore.quote.originalQuote);
         

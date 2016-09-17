@@ -40,18 +40,27 @@
     
     NSMutableArray *whelpedArray = [@[]mutableCopy];
     
-    for (NSString *word in sentenceAsArray) {
+    for (NSUInteger i = 0; i < sentenceAsArray.count; i++) {
+        
+        NSString *word = sentenceAsArray[i];
         
         if ([word hasSuffix:@"ing"] || [word hasSuffix:@"ing."]) {
             
             NSString *randomParticiple = [dataStore getRandomParticiple];
             NSLog(@"TRYS TO INSERT:%@", randomParticiple );
             
-            [whelpedArray insertObject:randomParticiple atIndex:[sentenceAsArray indexOfObject:word]];
+            [whelpedArray insertObject:randomParticiple atIndex:i];
             
+        } else if ((i > 0 && [sentenceAsArray[i - 1] isEqualToString:@"a"]) || (i > 0 && [sentenceAsArray[i - 1] isEqualToString:@"the"])){
+            
+            NSString *randomNoun = [dataStore getRandomNoun];
+        
+            [whelpedArray insertObject: randomNoun atIndex:i];
+        
+        
         } else {
             
-            [whelpedArray insertObject: word atIndex:[sentenceAsArray indexOfObject:word]];
+            [whelpedArray insertObject: word atIndex:i];
             
         }
     }

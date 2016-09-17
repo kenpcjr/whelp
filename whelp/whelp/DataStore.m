@@ -121,12 +121,26 @@
     
     NSInteger randomNumber = arc4random_uniform(self.pastParticiple.count - 1);
     
-    NSLog(@"THIS NUMBER %li", randomNumber);
+    NSLog(@"THIS NUMBER PARTICIPLE %li", randomNumber);
     
-    NSLog(@"THE FUNCTION RETURNS: %@", self.pastParticiple[randomNumber] );
+    NSLog(@"THE FUNCTION RETURNS PARTICIPLE: %@", self.pastParticiple[randomNumber] );
     
     return self.pastParticiple[randomNumber];
 
+    
+}
+
+-(NSString *)getRandomNoun {
+    
+    NSLog(@"Here's the array of nouns ffrom the dataStore: %@", self.nouns);
+    
+    NSInteger randomNumber = arc4random_uniform(self.nouns.count - 1);
+    
+    NSLog(@"THIS NUMBER NOUN %li", randomNumber);
+    
+    NSLog(@"THE FUNCTION RETURNS NOUN: %@", self.nouns[randomNumber] );
+    
+    return self.nouns[randomNumber];
     
 }
 

@@ -27,4 +27,6 @@
 
 -(NSString*)getRandomParticiple;
 
+-(NSString *)getRandomNoun;
+
 @end
